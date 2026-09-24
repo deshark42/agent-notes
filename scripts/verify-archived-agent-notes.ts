@@ -45,6 +45,8 @@ for (const entry of readdirSync(archiveRoot, { withFileTypes: true })) {
   }
   kinds.add(entry.name)
   for (const child of readdirSync(resolve(archiveRoot, entry.name), { withFileTypes: true })) {
+    // A `.gitkeep` only holds an otherwise-empty kind directory in git; it is not an archived artifact.
+    if (child.name === '.gitkeep') continue
     const rel = `${entry.name}/${child.name}`
     if (!child.isFile()) {
       errors.push(`${rel}: archived kind directories contain regular files only`)
