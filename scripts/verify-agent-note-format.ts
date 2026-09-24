@@ -1,8 +1,7 @@
 /**
  * Enforce Agent Note headers, lifecycle-specific sections, alternatives, and retired
- * marker rules. Classification and filenames belong to the sibling tree gate;
- * translation structure belongs to the pairing gate. Exact format and
- * grandfathering rules live in `.agents/notes/README.md`.
+ * marker rules. Classification and filenames belong to the sibling tree gate. Exact
+ * format and grandfathering rules live in `.agents/notes/README.md`.
  */
 
 import { readFileSync } from 'node:fs'
@@ -25,15 +24,15 @@ const STATUS: Record<string, RegExp> = {
   rejected: /^Status: rejected — .+$/,
 }
 
-/** Required `##` headings per lifecycle, beyond the universal `## Problem` opener. */
+/** Required `##` headings per lifecycle, beyond the universal `## 问题` opener. */
 const REQUIRED: Record<string, string[]> = {
-  proposed: ['## Proposal', '## Acceptance criteria', '## Risks'],
-  implemented: ['## Decision', '## Consequences'],
-  rejected: ['## Proposal'],
+  proposed: ['## 提案', '## 验收标准', '## 风险'],
+  implemented: ['## 决策', '## 后果'],
+  rejected: ['## 提案'],
 }
 
 /** Headings banned in `implemented/` — proposal-era spec-speak per the slop checklist. */
-const BANNED_IMPLEMENTED = /^## (?:Proposal\b|Plan\b|Migration plan\b|Acceptance criteria\b)/i
+const BANNED_IMPLEMENTED = /^## (?:提案|计划|迁移计划|验收标准)/
 
 const { notes, errors } = walkAgentNoteTree()
 
@@ -65,20 +64,20 @@ for (const note of notes) {
   }
 
   const h2s = prose.filter(l => l.startsWith('## ')).map(l => l.trimEnd())
-  if (h2s[0] !== '## Problem') fail(`the first section must be \`## Problem\` (got ${JSON.stringify(h2s[0] ?? '<none>')})`)
+  if (h2s[0] !== '## 问题') fail(`the first section must be \`## 问题\` (got ${JSON.stringify(h2s[0] ?? '<none>')})`)
   for (const required of REQUIRED[note.lifecycle] ?? []) {
     if (!h2s.includes(required)) fail(`missing the required \`${required}\` section`)
   }
   if (note.lifecycle === 'implemented') {
     for (const h2 of h2s.filter(h => BANNED_IMPLEMENTED.test(h))) {
-      fail(`\`${h2}\` is a proposal-era heading; an implemented Agent Note states what is (fold it into Decision/Consequences/Testing)`)
+      fail(`\`${h2}\` is a proposal-era heading; an implemented Agent Note states what is (fold it into 决策/后果/测试)`)
     }
   }
 
-  const hasSection = h2s.includes('## Alternatives considered')
+  const hasSection = h2s.includes('## 曾考虑的替代方案')
   const hasGrandfather = prose.includes(GRANDFATHER)
-  if (hasSection && hasGrandfather) fail('carries both `## Alternatives considered` and the grandfather comment — drop the comment')
-  if (!hasSection && !hasGrandfather) fail('missing `## Alternatives considered` (a pre-format Agent Note whose alternatives are not reconstructible carries the grandfather comment instead — see .agents/notes/README.md § The file format)')
+  if (hasSection && hasGrandfather) fail('carries both `## 曾考虑的替代方案` and the grandfather comment — drop the comment')
+  if (!hasSection && !hasGrandfather) fail('missing `## 曾考虑的替代方案` (a pre-format Agent Note whose alternatives are not reconstructible carries the grandfather comment instead — see .agents/notes/README.md § 文件格式)')
   if (hasGrandfather && note.date >= FORMAT_ADOPTED) fail(`the grandfather comment is only valid for Agent Notes dated before ${FORMAT_ADOPTED}`)
 
   if (prose.some(line => LEGACY_MARKERS.some(marker => line.includes(marker)))) fail('carries the retired legacy-format debt marker')
