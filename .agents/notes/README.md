@@ -35,7 +35,7 @@
 
 ## 归档与删除
 
-仅描述小型 UI 调整或纯机械变更的 implemented Agent Note 直接删除，并修复或移除入站链接。局部 bug 修复、性能变更、新能力或实质行为决策，不会仅因实现规模小就符合删除条件。其他已实施记录只有在交付决策完整落地、其依据不太可能再指导未来工作，但仍具有历史决策价值时才归档。如果其中的备选方案、归属边界、否定性保证、持久化语义或协议语义、安全规则，或者重新引入条件仍有价值，则继续作为活跃记录保留。绝不归档 proposed Agent Note：过时的提案应转为 rejected。仅当 rejected Agent Note 仍能避免一种可能发生的错误时保留；否则一并删除该文件。请使用经过校准的 [`dsh-archive-agent-notes`](../skills/dsh-archive-agent-notes/SKILL.md) 工作流，不要根据字数、存续时间或目标配额来判断。
+仅描述小型 UI 调整或纯机械变更的 implemented Agent Note 直接删除，并修复或移除入站链接。局部 bug 修复、性能变更、新能力或实质行为决策，不会仅因实现规模小就符合删除条件。其他已实施记录只有在交付决策完整落地、其依据不太可能再指导未来工作，但仍具有历史决策价值时才归档。如果其中的备选方案、归属边界、否定性保证、持久化语义或协议语义、安全规则，或者重新引入条件仍有价值，则继续作为活跃记录保留。绝不归档 proposed Agent Note：过时的提案应转为 rejected。仅当 rejected Agent Note 仍能避免一种可能发生的错误时保留；否则一并删除该文件。请使用经过校准的 [`archive-agent-notes`](../skills/archive-agent-notes/SKILL.md) 工作流，不要根据字数、存续时间或目标配额来判断。
 
 归档路径编码为 `archived/{class}/yyyy-mm-dd-topic-title.md`；其中有意省略 `implemented`，因为只有 implemented Agent Note 可以进入归档。归档变更会移动该文件，保留 `Status: implemented`，紧接该状态行插入 `Archived: YYYY-MM-DD` 行，并修复或删除入站链接。归档时只允许对内容做这些更改。既有标题标点与空行布局不阻止归档；与正文一起保留。
 

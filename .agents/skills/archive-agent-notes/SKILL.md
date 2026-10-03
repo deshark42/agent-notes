@@ -1,9 +1,9 @@
 ---
-name: dsh-archive-agent-notes
-description: Use when adding, auditing, pruning, archiving, restoring, or reviewing Agent Notes in deepseek-harness; checks every new note for superseded active records, deletes small UI and purely mechanical records, classifies other implemented notes by future decision value, deletes rejected notes that no longer prevent a tempting fallacy, and applies the frozen archived/{kind} and manifest rules.
+name: archive-agent-notes
+description: Use when adding, auditing, pruning, archiving, restoring, or reviewing Agent Notes; checks every new note for superseded active records, deletes small UI and purely mechanical records, classifies other implemented notes by future decision value, deletes rejected notes that no longer prevent a tempting fallacy, and applies the frozen archived/{kind} and manifest rules.
 ---
 
-# Archive DeepSeek Harness Agent Notes
+# Archive Agent Notes
 
 Reduce the active decision corpus without erasing history that can still guide work. Judge every note semantically; word count and age are discovery aids, never archive criteria.
 
