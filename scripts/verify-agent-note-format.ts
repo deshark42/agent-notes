@@ -84,7 +84,7 @@ for (const note of notes) {
 }
 
 if (errors.length === 0) {
-  console.log(`verify-agent-note-format: ${notes.length} Agent Note(s) checked, all conform to .agents/notes/README.md § The file format.`)
+  console.log(`verify-agent-note-format: ${notes.length} Agent Note(s) checked, all conform to .agents/notes/README.md § 文件格式.`)
   process.exit(0)
 }
 
