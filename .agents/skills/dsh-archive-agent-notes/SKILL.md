@@ -34,22 +34,22 @@ These examples set the bar; the word counts demonstrate that size is not the tes
 
 Delete implemented notes such as:
 
-- collapsed sidebar control rail — 533 words: closed, minor UI behavior;
-- issue-policy module ownership — completed function relocation and import rewiring with unchanged behavior.
+- a collapsed UI control — 533 words: closed, minor UI behavior;
+- a module ownership move — completed relocation and import rewiring with unchanged behavior.
 
 Keep implemented notes such as:
 
-- event-sourced sessions — 248 words: foundational authority and durability boundary;
-- single Harness-home resolver — 596 words: cross-product ownership rule;
-- project session directories — 628 words: durable storage and identity policy;
+- an event-sourced session store — 248 words: foundational authority and durability boundary;
+- a single configuration-root resolver — 596 words: a cross-product ownership rule;
+- project-scoped data directories — 628 words: durable storage and identity policy;
 - parallel pre-push gates — 400 words: borderline, but still guides gate scheduling and resource tuning;
-- dropped image content block — 334 words: keep until multimodal support lands, because it states the coordinated reintroduction condition.
+- a dropped content block — 334 words: keep until multimodal support lands, because it states the coordinated reintroduction condition.
 
 For rejected notes:
 
-- keep folding the compaction package split — 426 words: the temptation to merge the packages remains meaningful;
-- delete streaming workflow progress through tool calls — 972 words: its ACP/UI premise is obsolete;
-- delete dropping ACP terminal metadata — 362 words: the later automation-only ACP decision resolved the question.
+- keep folding a package split — 426 words: the temptation to merge them remains meaningful;
+- delete streaming progress through tool calls — 972 words: its protocol premise is obsolete;
+- delete dropping terminal metadata — 362 words: a later, narrower decision resolved the question.
 
 ## Archive an implemented Agent Note
 
