@@ -56,12 +56,12 @@ For rejected notes:
 1. Move `foo.md` from `implemented/<kind>/` to `archived/<kind>/`; `implemented` is deliberately absent from the archive path.
 2. Make no body edits. Insert only `Archived: YYYY-MM-DD` immediately below `Status: implemented`, using the archival date.
 3. Search for inbound links from active prose. Redirect them to current authority, retarget them to the archived path only when the historical snapshot is intentionally cited, or delete them. Never verify or repair links out of the archived note.
-4. Run `pnpm run verify-archived-agent-notes --write`. Its append-only mode first proves every existing seal still matches, then adds only the new artifact hashes. Run the normal verifier afterward.
+4. Run `node scripts/verify-archived-agent-notes.ts --write`. Its append-only mode first proves every existing seal still matches, then adds only the new artifact hashes. Run the normal verifier afterward.
 
 After the note is sealed, never edit, move, reformat, or delete it. Archived notes remain valid inbound-link targets but are historical snapshots, not authority for current behavior.
 
 ## Validate and report
 
-Run the archive verifier's focused test, `pnpm run verify-archived-agent-notes`, `pnpm run doc-sync`, `pnpm run lint`, and `git diff --check`.
+Run `node scripts/verify-archived-agent-notes.ts`, `node scripts/verify-agent-note-format.ts`, `node scripts/verify-agent-note-classification.ts`, and `git diff --check`.
 
 Report active implemented notes kept, implemented notes deleted or archived, rejected notes kept/deleted, proposed notes rejected if any, and every genuinely borderline case with its word count and chosen outcome. Do not claim archived outbound links are valid: the archive verifier intentionally never checks them.

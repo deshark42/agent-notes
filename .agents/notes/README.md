@@ -57,7 +57,7 @@
 
 ## 文件格式
 
-每份活跃 Agent Note 遵循统一的文件内格式，由 `pnpm run verify-agent-note-format`（[scripts/verify-agent-note-format.ts](../../scripts/verify-agent-note-format.ts)，`doc-sync`（文档同步门禁）的一环）强制执行。归档记录保留封存时的格式，并增加上述归档日期行。
+每份活跃 Agent Note 遵循统一的文件内格式，由 [scripts/verify-agent-note-format.ts](../../scripts/verify-agent-note-format.ts) 强制执行。归档记录保留封存时的格式，并增加上述归档日期行。
 
 ### 头部块
 
