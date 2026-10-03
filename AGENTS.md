@@ -21,7 +21,3 @@ node scripts/verify-archived-agent-notes.ts        # sealed archive; --write app
 ```
 
 Run all three after touching `.agents/notes/` or `scripts/`.
-
-## Language
-
-`README.md` is Chinese. The other instruction files are English.
