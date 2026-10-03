@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "scripts": {
+    "verify-agent-note-classification": "node scripts/verify-agent-note-classification.ts",
+    "verify-agent-note-format": "node scripts/verify-agent-note-format.ts",
+    "verify-archived-agent-notes": "node scripts/verify-archived-agent-notes.ts"
+  }
+}
