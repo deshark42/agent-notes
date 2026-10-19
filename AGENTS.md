@@ -23,3 +23,7 @@ Before pushing, follow [pre-push-checks](.agents/skills/pre-push-checks/SKILL.md
 
 - Match evidence to the surface: `npm run verify` for changes under `.agents/notes/` or `scripts/`, the [archive workflow](.agents/skills/archive-agent-notes/SKILL.md) for archiving, and no gate for instruction or metadata changes.
 - Never default to the full suite or repeat a passing check for commit or push. CI, once configured, owns exhaustive coverage.
+
+## Conventions
+
+- **Create Agent Notes only for durable decision rationale;** mechanical/local edits are exempt, including local UI changes ([scope](.agents/notes/README.md#when-to-write-one)). Archived notes are frozen: never edit or treat them as current authority ([archive policy](.agents/notes/README.md#archiving-and-deletion)).

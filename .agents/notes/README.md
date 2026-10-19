@@ -33,6 +33,8 @@
 
 `architecture` 与 `process` 的界线：**architecture** 关乎我们交付的源码；**process** 关乎围绕源码的工具与工作流。（`refactor` 被有意排除：它与 `simplification` 重叠，而后者的判别标准「可观察行为是否改变」已经覆盖了它。）
 
+<a id="archiving-and-deletion"></a>
+
 ## 归档与删除
 
 仅描述小型 UI 调整或纯机械变更的 implemented Agent Note 直接删除，并修复或移除入站链接。局部 bug 修复、性能变更、新能力或实质行为决策，不会仅因实现规模小就符合删除条件。其他已实施记录只有在交付决策完整落地、其依据不太可能再指导未来工作，但仍具有历史决策价值时才归档。如果其中的备选方案、归属边界、否定性保证、持久化语义或协议语义、安全规则，或者重新引入条件仍有价值，则继续作为活跃记录保留。绝不归档 proposed Agent Note：过时的提案应转为 rejected。仅当 rejected Agent Note 仍能避免一种可能发生的错误时保留；否则一并删除该文件。请使用经过校准的 [`archive-agent-notes`](../skills/archive-agent-notes/SKILL.md) 工作流，不要根据字数、存续时间或目标配额来判断。
