@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
+    "verify": "npm run verify-agent-note-classification && npm run verify-agent-note-format && npm run verify-archived-agent-notes",
     "verify-agent-note-classification": "node scripts/verify-agent-note-classification.ts",
     "verify-agent-note-format": "node scripts/verify-agent-note-format.ts",
     "verify-archived-agent-notes": "node scripts/verify-archived-agent-notes.ts"

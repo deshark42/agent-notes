@@ -30,7 +30,7 @@ Never guess or fetch a base; supply the ref verified from current remote or PR s
 
 There is no universal local baseline. Every behavior change needs the narrowest available test or purpose-built check that would fail for its regression; add broader checks only for surfaces the diff actually reaches.
 
-- **Documentation and Agent Notes:** run `node scripts/verify-agent-note-classification.ts`, `node scripts/verify-agent-note-format.ts`, and `node scripts/verify-archived-agent-notes.ts`.
+- **Documentation and Agent Notes:** run `npm run verify`.
 
 Do not manually repeat a passing check merely because commit or push follows.
 
