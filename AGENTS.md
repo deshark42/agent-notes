@@ -5,13 +5,8 @@ Agent Notes are agent-written RFCs that record the rationale and the rejected al
 ## Repository layout
 
 ```
-.agents/notes/README.md                                  the Agent Note contract
-.agents/notes/AGENTS.md                                  rules for writing notes
-.agents/notes/{proposed,implemented,rejected}/<class>/   active notes
-.agents/notes/archived/<class>/                          sealed artifacts + manifest.json
-.agents/skills/archive-agent-notes/                      archive workflow
-.agents/skills/pre-push-checks/                          check selection
-scripts/                                                 gates
+.agents/     Agent workflows/notes
+scripts/     gates
 ```
 
 ## Commands
