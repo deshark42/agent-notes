@@ -40,7 +40,7 @@ Run the complete local approximation only when the user explicitly requests it, 
 
 ## Protect history-rewriting pushes
 
-Rebase is allowed for standalone PR branches, including after review. Before a standalone history rewrite, fetch the current remote branch and record its exact OID; publish with `--force-with-lease=<branch>:<observed-oid>` so a concurrent update aborts the push. Raw `--force` is never allowed.
+Rebase is the default way to refresh standalone PR branches, including after review. Enable `rerere` when rebasing so Git can reuse prior conflict resolutions. Before a standalone history rewrite, fetch the current remote branch and record its exact OID; publish with `--force-with-lease=<branch>:<observed-oid>` so a concurrent update aborts the push. Raw `--force` is never allowed.
 
 After any rewritten push, fetch the live heads again and re-audit unresolved review threads, approvals, mergeability, and checks. Commit hashes and inline-comment anchors from before the rewrite are not current evidence.
 
